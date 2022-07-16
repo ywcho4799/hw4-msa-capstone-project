@@ -21,11 +21,11 @@
 
     |일자|진행|내용|
     |:------:|:---|:---|
-    |05/16 AM|OJT|과정설명<br>과제수행환경설명|
-    |05/16 PM|Brain Storming|msaez.io|
-    |05/17 ALL|Team Project|팀별과제 수행|
-    |05/18 AM|Team Project|팀별과제 수행|
-    |05/18 PM|Wrap Up|과제 제출<br>시작:14시<br>마감:16시|
+    |07/25 AM|OJT|과정설명<br>과제수행환경설명|
+    |07/25 PM|Brain Storming|msaez.io|
+    |07/26 ALL|Team Project|팀별과제 수행|
+    |07/27 AM|Team Project|팀별과제 수행|
+    |07/27 PM|Wrap Up|과제 제출<br>시작:14시<br>마감:16시|
 
 * 시간별 진행
   - 09:00 ~ 11:30 오전과정
@@ -41,20 +41,20 @@
   
 ## 👫 Team
 
-   |팀|성명|직급|소속|
-   |:----:|:------:|:------:|:------|
-   |1|🎖윤정호|대리|네트워크운영팀|
-   ||   김순호|대리|보안운영팀|
-   ||   송상헌|과장|아키텍트팀|
-   ||   박원종|사원|방산운영1팀|
-   |2|🎖이창국|부장|Digital Native TF|
-   ||   탁세영|대리|시스템운영1팀|
-   ||   김주희|사원|서비스운영2팀|
-   ||   이예진|사원|SharedService3팀|
-   |3|🎖탁미정|과장|방산운영1팀|
-   ||   백승진|대리|SharedService2팀|
-   ||   정현영|사원|Digital Native TF|
-   ||   이진현|과장|방산운영2팀|
+|팀|성명|직급|소속|
+|:----:|:------:|:------:|:------|
+|1|🎖윤정호|대리|네트워크운영팀|
+||   김순호|대리|보안운영팀|
+||   송상헌|과장|아키텍트팀|
+||   박원종|사원|방산운영1팀|
+|2|🎖이창국|부장|Digital Native TF|
+||   탁세영|대리|시스템운영1팀|
+||   김주희|사원|서비스운영2팀|
+||   이예진|사원|SharedService3팀|
+|3|🎖탁미정|과장|방산운영1팀|
+||   백승진|대리|SharedService2팀|
+||   정현영|사원|Digital Native TF|
+||   이진현|과장|방산운영2팀|
 
    
 
@@ -113,11 +113,12 @@
 
   이전실습환경(https://labs.msaez.io/)에 접속해서 실습내용을 확인해 볼 수 있으나, `INTO THE LAB`에서 실습했었던 온라인상의 실행은 불가하므로, `파일다운로드`버튼을 이용해 실습했던 code를 다운로드 해서 확인
 
-
-
 ## 🧨 Attention
-* Web Browser IDE 환경에서 과제 수행시, Client의 Network 상황에 따라 작업중인 내용이 유실될 있으니 `저장` 또는 `commit(push)`
-* GitPod는 `Github 계정 1개` 기준으로 `약 50개`까지의 Pod를 각각 `약 24시간`까지 유지하므로 진행시 유의 
+
+### GitPod
+
+* `Github 계정 1개` 기준으로 `약 50개`까지의 Pod를 각각 `약 24시간`까지 유지하므로 진행시 유의 
+* 장기간 자리비움시 작업중인 내용이 유실될 있으니 `저장` 또는 `commit(push)`
 * 과제수행 중 문의사항있을 경우, 카카오톡 오픈채팅창 이용
 
 
@@ -125,13 +126,16 @@
 ## 👍 Good Practice
   * 배달의 민족 Cover : [https://github.com/msa-ez/example-food-delivery]
   * Air BnB Cover : [https://github.com/msa-ez/airbnb_project]
-  
+
 
 
 ## 🪶 Lite Version (for FORK )
+
   * Dragon Water Lite 🦖💧 : [https://github.com/yongdoohar/msa-capstone-project]
 
 
+
 ## Thanks
+
   * 미래혁신센터 / Cloud Native개발팀
   * 양기훈 과장, 변용수 대리
