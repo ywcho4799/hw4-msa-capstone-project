@@ -5,8 +5,8 @@
 
 ## 📢 About
 * 지원
-  - 방산운영1팀
-  - 이원희 대리, 조진송 대리
+  - 네트워크운영팀 / 윤정호 대리
+  - Digital Native TF / 정현영 사원
 * Platform
   - ZOOM
     + URL : https://us06web.zoom.us/j/5327375996?pwd=dWI4WFRQZGhsajJQaGRkRGFqc09Wdz09
@@ -103,6 +103,8 @@
   + Collaboration & Sharing
       - 팀장 : github.com > repository > Settings > Collaborators > Add People ; 팀원초대
       - 팀장 / 팀원 : gitpod.io > Settings > Integrations > GitHub > Edit Permissions > Public_repo Check ;  GitPod - GitHub 권한설정
+  - gitpod 초기 연동시 필요한 라이브러리들이 없는 상태이며 **.gitpod.yml** 파일에 선언한 명령어들 자동 실행됨
+  - 실행 안되는 명령어들이 있으면 직접 설치
 * <a href="https://794003312682.signin.aws.amazon.com/console">AWS</a> (*약 15~20분 소요*)
   + 계정정보(IAM)메일 발송
   + Region-Code : 메일 내 Region 
