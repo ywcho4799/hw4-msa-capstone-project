@@ -8,22 +8,23 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: order
+        - id: pet
           uri: http://localhost:8081
           predicates:
-            - Path=/orders/** 
-        - id: delivery
-          uri: http://localhost:8082
-          predicates:
-            - Path=/deliveries/** 
-        - id: product
+            - Path=/pets/**, /cats/**, /dogs/** 
+        - id: store
           uri: http://localhost:8083
           predicates:
-            - Path=/inventories/** 
-        - id: frontend
-          uri: http://localhost:8080
+            - Path=/cartItems/**, /customers/**, /items/**
+        - id: store-front
+          uri: http://localhost:8085
+          predicates:
+            - Path=/shop/**, /shop/js/
+        - id: pet-front
+          uri: http://localhost:8084
           predicates:
             - Path=/**
+        
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -43,22 +44,15 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: order
-          uri: http://order:8080
+        - id: pet
+          uri: http://pet:8080
           predicates:
-            - Path=/orders/** 
-        - id: delivery
-          uri: http://delivery:8080
+            - Path=/pets/**, /cats/**, /dogs/** 
+        - id: store
+          uri: http://store:8080
           predicates:
-            - Path=/deliveries/** 
-        - id: product
-          uri: http://product:8080
-          predicates:
-            - Path=/inventories/** 
-        - id: frontend
-          uri: http://frontend:8080
-          predicates:
-            - Path=/**
+            - Path=/cartItems/**, /customers/**, /items/**
+        
       globalcors:
         corsConfigurations:
           '[/**]':
