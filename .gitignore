@@ -11,5 +11,6 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 aws/
 kafak-local/
+kafka_2.13-3.2.0/
 .kafka_2.13-3.2.0.tgz
 .awscliv2.zip
