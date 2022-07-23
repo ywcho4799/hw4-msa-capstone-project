@@ -19,15 +19,15 @@ tasks:
     command: > 
       sudo wget https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz &&
       sudo tar xzf kafka_2.13-3.2.0.tgz &&
-      sudo mv kafka_2.13-3.2.0 /workspace/hw4-msa-capstone-project/kafka-local &&
+      sudo mv kafka_2.13-3.2.0 /usr/local/kafka &&
       cd kafka-local &&
       cd /usr/lib &&
       sudo wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz &&
       sudo tar -zxvf openjdk-16.0.2_linux-x64_bin.tar.gz &&
       /usr/lib/jdk-16.0.2/bin/java -version &&
-      sudo export $JAVA_HOME=/usr/lib/jdk-16.0.2 &&
-      /workspace/hw4-msa-capstone-project/kafka-local/bin/zookeeper-server-start.sh /workspace/hw4-msa-capstone-project/kafka-local/config/zookeeper.properties &&
-      /workspace/hw4-msa-capstone-project/kafka-local/bin/kafka-server-start.sh /workspace/hw4-msa-capstone-project/kafka-local/config/server.properties
+      export JAVA_HOME=/usr/lib/jdk-16.0.2 &&
+      /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties &&
+      /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
   - name: kubectl
     command: >
       curl -LO https://dl.k8s.io/release/v1.21.0/bin/linux/amd64/kubectl &&
