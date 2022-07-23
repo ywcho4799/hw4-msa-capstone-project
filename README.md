@@ -143,10 +143,10 @@
   * 양기훈 과장, 변용수 대리
 
 
-<img src="./image/slide3.jpeg"></img>
-<img src="./image/slide4.jpeg"></img>
-<img src="./image/slide5.jpeg"></img>
-<img src="./image/slide6.jpeg"></img>
-<img src="./image/slide7.jpeg"></img>
-<img src="./image/slide8.jpeg"></img>
-<img src="./image/slide9.jpeg"></img>
+<img src="./images/slide3.jpeg"></img>
+<img src="./images/slide4.jpeg"></img>
+<img src="./images/slide5.jpeg"></img>
+<img src="./images/slide6.jpeg"></img>
+<img src="./images/slide7.jpeg"></img>
+<img src="./images/slide8.jpeg"></img>
+<img src="./images/slide9.jpeg"></img>
