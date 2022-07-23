@@ -21,7 +21,6 @@ tasks:
       sudo wget https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz &&
       sudo tar xzf kafka_2.13-3.2.0.tgz &&
       sudo mv kafka_2.13-3.2.0 /usr/local/kafka &&
-      cd kafka-local &&
       cd /usr/lib &&
       sudo wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz &&
       sudo tar -zxvf openjdk-16.0.2_linux-x64_bin.tar.gz &&
@@ -30,7 +29,7 @@ tasks:
       export JAVA_HOME=/usr/lib/jdk-16.0.2 &&
       /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties &&
 
-  - name: kafka-server
+  - name: kafka-server 
     command: > 
       sudo -s &&
       export JAVA_HOME=/usr/lib/jdk-16.0.2 &&
@@ -53,7 +52,7 @@ tasks:
     init: gp sync-await init-python
     command: >
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
-      unzip awscliv2.zip &&
+      unzip -o awscliv2.zip &&
       sudo ./aws/install &&
       gp sync-done init-awscli
     
