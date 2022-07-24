@@ -1,6 +1,8 @@
 server:
   port: 8080
+
 ---
+
 spring:
   profiles: default
   jpa:
@@ -24,10 +26,10 @@ spring:
       bindings:
         event-in:
           group: order
-          destination: 12mall
+          destination: mall
           contentType: application/json
         event-out:
-          destination: 12mall
+          destination: mall
           contentType: application/json
 
 logging:
@@ -37,6 +39,7 @@ logging:
 server:
   port: 8081
 ---
+
 spring:
   profiles: docker
   cloud:

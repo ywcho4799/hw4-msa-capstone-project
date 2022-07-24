@@ -20,7 +20,6 @@ public class Order  {
 
     @PostPersist
     public void onPostPersist(){
-        System.out.println("***********************onPostPersist()*************************");
         Orderplaced orderplaced = new Orderplaced();
         BeanUtils.copyProperties(this, orderplaced);
         orderplaced.publishAfterCommit();

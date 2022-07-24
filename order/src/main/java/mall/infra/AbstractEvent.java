@@ -4,10 +4,6 @@ import mall.OrderApplication;
 import mall.config.kafka.KafkaProcessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.apache.kafka.clients.admin.AdminClient;
-import org.apache.kafka.clients.admin.AdminClientConfig;
-import org.apache.kafka.clients.admin.ListTopicsOptions;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
@@ -17,7 +13,6 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
 
 public class AbstractEvent {
 
@@ -46,20 +41,7 @@ public class AbstractEvent {
 
     public void publish(String json){
         if( json != null ){
-            Properties properties = new Properties();
-            properties.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        
-            AdminClient adminClient = AdminClient.create(properties);
 
-            ListTopicsOptions listTopicsOptions = new ListTopicsOptions();
-            listTopicsOptions.listInternal(true);
-            try{
-                System.out.println("asdfasdfasdf");
-                System.out.println("topics:" + adminClient.listTopics(listTopicsOptions).names().get());
-            } catch (Exception e){
-                System.out.println("catch");
-            }
-            
             /**
              * spring streams 방식
              */
@@ -83,7 +65,6 @@ public class AbstractEvent {
 
             @Override
             public void afterCompletion(int status) {
-                System.out.println("aftercompletion");
                 AbstractEvent.this.publish();
             }
         });
