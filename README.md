@@ -36,7 +36,7 @@
   
       + 팀별과제 수행중에는 오전/오후과정 중 자율적으로 휴식
       + 3일차 과제제출시에는 준비된 팀부터 팀별 소그룹에서 발표 진행(마감시간 준수)
-      + 과제 제출 : leeewh@hanwha.com(이원희 대리), MD파일의 경우 별도 제출 필요 없음
+      + 과제 제출 : jhy156456@hanwha.com(정현영 사원), MD파일의 경우 별도 제출 필요 없음
   
   
 ## 👫 Team
@@ -100,6 +100,7 @@
 ## 📑 To-Do
 
 * <a href="https://www.msaez.io/#/" target="_blank">Brain Storming</a>
+  
   + 팀별로 주제 선정 및 이벤트 스토밍 진행
 * GitHub : [https://github.com/wonslog/hw3-msa-capstone-project]
 * <a href="https://gitpod.io/#/https://github.com/wonslog/hw3-msa-capstone-project" target="_blank">GitPod</a>
