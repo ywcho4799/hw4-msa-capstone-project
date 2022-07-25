@@ -25,7 +25,7 @@ public class PickupCanceled extends AbstractEvent {
         this.orderId = orderId;
     }
 
-    public String getOrderId() {
+    public String getPickupStatus() {
         return pickupStatus;
     }
 

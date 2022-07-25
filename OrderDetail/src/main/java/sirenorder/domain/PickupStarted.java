@@ -24,7 +24,7 @@ public class PickupStarted extends AbstractEvent {
         this.orderId = orderId;
     }
 
-    public String getOrderId() {
+    public String getPickupStatus() {
         return pickupStatus;
     }
 
