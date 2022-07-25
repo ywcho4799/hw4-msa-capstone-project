@@ -32,7 +32,7 @@ public class PaymentCanceled extends AbstractEvent {
         return price;
     }
     public void setPrice(Double price){
-        this.price = price
+        this.price = price;
     }
    
     public String getPaydate() {

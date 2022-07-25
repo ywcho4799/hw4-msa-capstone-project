@@ -18,37 +18,37 @@ public class Ordered extends AbstractEvent {
         return id;
     }
     public void setId(Long id){
-        this.id = id
+        this.id = id;
     }
-    public String getMeun(){
+    public String getMenu(){
         return menu;
     }
     public void setMenu(String menu){
-        this.menu = menu
+        this.menu = menu;
     }
     public String getCustomerId(){
         return customerId;
     }
     public void setCustomerId(String customerId){
-        this.customerId = customerId
+        this.customerId = customerId;
     }
     public String getCustomerName(){
         return customerName;
     }
     public void setCustomerName(String customerName){
-        this.customerName = customerName
+        this.customerName = customerName;
     }
     public String getCustomerTel(){
         return customerTel;
     }
     public void setCustomerTel(String customerTel){
-        this.customerTel = customerTel
+        this.customerTel = customerTel;
     }
     public Double getPrice(){
         return price;
     }
     public void setPrice(Double price){
-        this.price = price
+        this.price = price;
     }
 
 

@@ -111,7 +111,7 @@ public class OrderDetailsViewHandler {
             // view 객체 조회
 
             List<OrderDetails> orderDetailsList = orderDetailsRepository.findByOrderId(
-                pickupStarted.getOrderid()
+                pickupStarted.getOrderId()
             );
             for (OrderDetails orderDetails : orderDetailsList) {
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
@@ -133,7 +133,7 @@ public class OrderDetailsViewHandler {
             // view 객체 조회
 
             List<OrderDetails> orderDetailsList = orderDetailsRepository.findByOrderId(
-                pickupCanceled.getOrderid()
+                pickupCanceled.getOrderId()
             );
             for (OrderDetails orderDetails : orderDetailsList) {
                 // view 객체에 이벤트의 eventDirectValue 를 set 함

@@ -3,6 +3,7 @@ package sirenorder.infra;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import sirenorder.domain.*;
+import java.awt.List;
 
 @RepositoryRestResource(
     collectionResourceRel = "orderDetails",

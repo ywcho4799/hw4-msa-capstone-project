@@ -18,6 +18,6 @@ public class OrderCancled extends AbstractEvent {
         return id;
     }
     public void setId(Long id){
-        this.id = id
+        this.id = id;
     }
 }

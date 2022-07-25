@@ -23,22 +23,36 @@ public class OrderDetails {
     public String getOrderStatus(){
         return orderStatus;
     }
-    public void setOrderStatus(STring orderStatus){
-        this.orderStatus = orderStatus
+    public void setOrderStatus(String orderStatus){
+        this.orderStatus = orderStatus;
     }
     
     public String getPayStatus(){
         return payStatus;
     }
-    public void setPayStatus(STring payStatus){
-        this.payStatus = payStatus
+    public void setPayStatus(String payStatus){
+        this.payStatus = payStatus;
     }
     
     public String getPickupStatus(){
         return pickupStatus;
     }
-    public void setPickupStatus(STring pickupStatus){
-        this.pickupStatus = pickupStatus
+    public void setPickupStatus(String pickupStatus){
+        this.pickupStatus = pickupStatus;
+    }
+    
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+    public String getMenu(){
+        return menu;
+    }
+    public void setMenu(String menu){
+        this.menu = menu;
     }
     
 }
