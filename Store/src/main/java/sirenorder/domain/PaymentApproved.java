@@ -15,4 +15,19 @@ public class PaymentApproved extends AbstractEvent {
     private String payDate;
     // keep
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long orderId() {
+        return id;
+    }
+
+    public void orderId(Long orderId) {
+        this.orderId = orderId;
+    }
 }
