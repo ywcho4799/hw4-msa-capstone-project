@@ -18,7 +18,7 @@
 - Autoscale(HPA) - 
 - Self-Healing(Liveness Probe) - 
 - Zero-Downtime Deploy(Readiness Probe) - 
-- Config Map / Persistence Volume - 
+- Config Map / Persistence Volume -d 
 - Polyglot - 
 
 
