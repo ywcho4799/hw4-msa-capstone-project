@@ -11,12 +11,12 @@
 
   - ZOOM
 
-    - URL : https://us06web.zoom.us/j/5327375996?pwd=dWI4WFRQZGhsajJQaGRkRGFqc09Wdz09
+    - URL : 
     - 회의 ID : 532 737 5996
     - 암호 : 1234
 
   - Kakao
-    - URL : https://open.kakao.com/o/gSWutree
+    - URL : 
 
 ## 🕙 Schedule
 
