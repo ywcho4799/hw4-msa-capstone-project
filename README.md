@@ -38,8 +38,10 @@
 - 주문상태 확인은 주문, 결제, 픽업 서비스 작동 유무와 무관하게 항상 확인할 수 있어야 한다. 
 
 # 실행
+```
 - cd order
 - mvn spring-boot:run
+```
 - cd payment
 - mvn spring-boot:run
 - cd delivery
