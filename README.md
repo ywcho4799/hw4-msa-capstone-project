@@ -102,7 +102,7 @@
 * <a href="https://www.msaez.io/#/" target="_blank">Brain Storming</a>
   
   + 팀별로 주제 선정 및 이벤트 스토밍 진행
-* GitHub : [https://github.com/wonslog/hw3-msa-capstone-project]
+* GitHub : [https://github.com/jhy156456/hw4-msa-capstone-project]
 * <a href="https://gitpod.io/#/https://github.com/wonslog/hw3-msa-capstone-project" target="_blank">GitPod</a>
   + Github 계정 및 Repositoy(public) 준비 ( **for FORK** )
   + gitpod.io/#/{Github-Repository-URL}
