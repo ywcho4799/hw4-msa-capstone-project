@@ -82,3 +82,7 @@ order, payment, store Aggregate의 '마이페이지' 형식과 같이 통합 조
 Modeling
 ```
 ![image](https://user-images.githubusercontent.com/17975717/180715568-3d39261a-df66-42f4-8871-800be3daf063.png)
+
+
+![image](https://user-images.githubusercontent.com/17975717/180717689-7df38998-498a-4f49-84df-fe8a233073ee.png)
+
