@@ -6,4 +6,4 @@ import sirenorder.domain.*;
 
 @RepositoryRestResource(collectionResourceRel = "pickups", path = "pickups")
 public interface PickupRepository
-    extends PagingAndSortingRepository<Pickup, String> {}
+    extends PagingAndSortingRepository<Pickup, Long> {}

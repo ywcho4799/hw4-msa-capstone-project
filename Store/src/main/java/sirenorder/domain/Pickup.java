@@ -13,6 +13,8 @@ import sirenorder.domain.PickupStarted;
 @Data
 public class Pickup {
 
+    private Long id;
+
     private Long orderId;
 
     private String customerAddr;
