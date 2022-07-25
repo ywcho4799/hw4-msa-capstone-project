@@ -24,6 +24,7 @@
 
 # 분석설계
 - 주문 상세보기를 통해 CQRS 구현
+![image](https://user-images.githubusercontent.com/17975717/180680107-cb531889-2921-4c8a-8cfd-b53f90c7c066.png)
 
 - 고객이 주문한다
 - 고객이 결제한다 
