@@ -13,6 +13,8 @@ import sirenorder.domain.PickupStarted;
 @Data
 public class Pickup {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Long orderId;
