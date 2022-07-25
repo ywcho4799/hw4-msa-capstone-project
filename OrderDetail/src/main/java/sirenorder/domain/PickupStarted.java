@@ -15,4 +15,20 @@ public class PickupStarted extends AbstractEvent {
     private String deliveryId;
     private String pickupId;
     private String pickupStatus;
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOrderId() {
+        return pickupStatus;
+    }
+
+    public void setPickupStatus(String pickupStatus) {
+        this.pickupStatus = pickupStatus;
+    }
 }
