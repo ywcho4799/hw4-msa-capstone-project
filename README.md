@@ -32,6 +32,17 @@
 - 음료 주문 완료후 고객 수령
 
 특징
-- 주문, 결제, 배달 서비스는 분리된 서비스로, 하나의 시스템이 과중되더라도 나머지 시스템은 기능할 수 있어야 한다. 
+- 주문, 결제, 픽업 서비스는 분리된 서비스
+- 하나의 시스템이 과중되더라도 나머지 시스템은 기능수행 가능
 - 결제처리를 확인 한 후에 주문 요청 처리가 되도록 한다. 
 - 주문상태 확인은 주문, 결제, 픽업 서비스 작동 유무와 무관하게 항상 확인할 수 있어야 한다. 
+
+#실행
+- cd order
+- mvn spring-boot:run
+- cd payment
+- mvn spring-boot:run
+- cd delivery
+- mvn spring-boot:run
+- cd orderDetail
+- mvn spring-boot:run
