@@ -55,6 +55,11 @@
 -
 
 # 실행
+
+```
+- cd gateway
+- mvn spring-boot:run
+```
 ```
 - cd order
 - mvn spring-boot:run
@@ -64,10 +69,16 @@
 - mvn spring-boot:run
 ```
 ```
-- cd delivery
+- cd Store
 - mvn spring-boot:run
 ```
+# CQRS
+
+- 주문 발생(취소), 결제(취소), 픽업(취소) 이벤트 발생 시 주문, 결제 상태값 주문금액(금액확인)을 고객이 조회할 수 있도록 CQRS로 구현하였습니다.
+
 ```
-- cd orderDetail
-- mvn spring-boot:run
+비동기식으로 처리되어 이벤트 기반의 Kafka를 통해 처리되어 별도 Table에 관리한다.
+order, payment, store Aggregate의 '마이페이지' 형식과 같이 통합 조회가 가능하다.
+Modeling
 ```
+![image](https://user-images.githubusercontent.com/17975717/180715568-3d39261a-df66-42f4-8871-800be3daf063.png)
