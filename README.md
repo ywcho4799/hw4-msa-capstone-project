@@ -42,9 +42,15 @@
 - cd order
 - mvn spring-boot:run
 ```
+```
 - cd payment
 - mvn spring-boot:run
+```
+```
 - cd delivery
 - mvn spring-boot:run
+```
+```
 - cd orderDetail
 - mvn spring-boot:run
+```
