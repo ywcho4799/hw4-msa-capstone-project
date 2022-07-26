@@ -35,11 +35,10 @@
     async created() {
       var temp = await axios.get(axios.fixUrl('/orderDetails'))
 
-      this.orderDetails = temp.data._embedded.orderDsetails;
+      this.orderDetails = temp.data._embedded.orderDetails;
 
     },
     methods: {
     }
   }
 </script>
-

@@ -31,34 +31,10 @@
           </div>
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="OrderStatus" v-model="value.orderStatus"/>
+            <v-text-field label="pickupStatus" v-model="value.pickupStatus"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            OrderStatus :  {{value.orderStatus }}
-          </div>
-
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="CustomerAddr" v-model="value.customerAddr"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            CustomerAddr :  {{value.customerAddr }}
-          </div>
-
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="CustomerTel" v-model="value.customerTel"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            CustomerTel :  {{value.customerTel }}
-          </div>
-
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="CustomerId" v-model="value.customerId"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            CustomerId :  {{value.customerId }}
+            pickupStatus :  {{ value.pickupStatus }}
           </div>
 
 
@@ -73,10 +49,10 @@
       <v-btn
         color="deep-purple lighten-2"
         text
-        @click="edit"
+        @click="pickup"
         v-if="!editMode"
       >
-        Edit
+        픽업완료
       </v-btn>
       <v-btn
         color="deep-purple lighten-2"
@@ -86,14 +62,7 @@
       >
         Save
       </v-btn>
-      <v-btn
-        color="deep-purple lighten-2"
-        text
-        @click="remove"
-        v-if="!editMode"
-      >
-        Delete
-      </v-btn>
+   
       
     </v-card-actions>
   </v-card>
@@ -118,6 +87,7 @@
       value: Object,
       editMode: Boolean,
       isNew: Boolean
+
     },
     data: () => ({
         date: new Date().toISOString().substr(0, 10),
@@ -128,6 +98,28 @@
     methods: {
       edit(){
         this.editMode = true;
+      },
+      async pickup(){
+        try{
+          var temp = null;
+          await axios.patch('/pickups/'+this.value.orderId,{
+            pickupStatus :'픽업 준비 완료' 
+          })
+
+          this.value = temp.data;
+
+          this.editMode = false;
+          this.$emit('input', this.value);
+
+          if(this.isNew){
+            this.$emit('add', this.value);
+          }else{
+            this.$emit('edit', this.value);
+          }
+
+        }catch(e){
+          alert(e.message)
+        }
       },
       async save(){
         try{

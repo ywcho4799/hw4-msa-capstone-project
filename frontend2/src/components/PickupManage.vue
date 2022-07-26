@@ -41,6 +41,7 @@ export default {
     append(value){
       this.tick = false
       this.newValue = {}
+      value.pickupStatus=1;
       this.values.push(value)
       
       this.$nextTick(function(){
@@ -61,6 +62,7 @@ export default {
       if(where > -1){
         this.values.splice(i, 1);
       }
+      
     }    
   }
 };
