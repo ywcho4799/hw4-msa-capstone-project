@@ -2,11 +2,11 @@
 
 <template>
 <div>
-  <h1 style = "margin-left:4.5%; margin-top:-10px; margin-bottom:20px;">Delivery</h1>
+  <h1 style = "margin-left:4.5%; margin-top:-10px; margin-bottom:20px;">Pickup</h1>
 
     <v-row>
-        <Delivery class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
-        <Delivery class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+        <Pickup class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
+        <Pickup class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
     </v-row>
 
 </div>
@@ -15,13 +15,13 @@
 <script>
 
 const axios = require('axios').default;
-import Delivery from './Delivery.vue';
+import Pickup from './Pickup.vue';
 
 export default {
-  name: 'DeliveryManager',
+  name: 'PickupManage',
 
   components: {
-    Delivery
+    Pickup
   },
 
   data: () => ({
@@ -31,9 +31,9 @@ export default {
   }),
 
   async created() {
-      var temp = await axios.get(axios.fixUrl('/deliveries'))
+      var temp = await axios.get(axios.fixUrl('/pickups'))
 
-      this.values = temp.data._embedded.deliveries;
+      this.values = temp.data._embedded.pickups;
 
   },
 

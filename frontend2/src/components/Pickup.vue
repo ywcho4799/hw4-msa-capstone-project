@@ -15,10 +15,10 @@
     ></v-img>
 
     <v-card-title v-if="value._links">
-        Delivery # {{value._links.self.href.split("/")[value._links.self.href.split("/").length - 1]}}
+        Pickup # {{value._links.self.href.split("/")[value._links.self.href.split("/").length - 1]}}
     </v-card-title >
     <v-card-title v-else>
-        Delivery
+        Pickup
     </v-card-title >
 
     <v-card-text style = "margin-left:-15px; margin-top:10px;">
@@ -62,12 +62,7 @@
           </div>
 
 
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field type="number" label="DeliveryId" v-model="value.deliveryId"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            DeliveryId :  {{value.deliveryId }}
-          </div>
+          
 
 
     </v-card-text>
@@ -116,7 +111,7 @@
   
   
   export default {
-    name: 'Delivery',
+    name: 'Pickup',
     components:{
     },
     props: {
@@ -138,7 +133,7 @@
         try{
           var temp = null;
           if(this.isNew){
-            temp = await axios.post(axios.fixUrl('/deliveries'), this.value)
+            temp = await axios.post(axios.fixUrl('/pickups'), this.value)
           }else{
             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
           }
