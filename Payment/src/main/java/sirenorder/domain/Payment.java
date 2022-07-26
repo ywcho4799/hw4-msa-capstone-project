@@ -7,6 +7,10 @@ import lombok.Data;
 import sirenorder.PaymentApplication;
 import sirenorder.domain.PaymentApproved;
 import sirenorder.domain.PaymentCanceled;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "Payment_table")
@@ -58,18 +62,11 @@ public class Payment {
 
     @PostUpdate
     public void onPostUpdate() {
-        PaymentApproved paymentApproved = new PaymentApproved(this);
-        paymentApproved.publishAfterCommit();
+        if(this.getCancelDate() == null){
+            PaymentApproved paymentApproved = new PaymentApproved(this);
+            paymentApproved.publishAfterCommit();
+        }
     }
-
-    @PostRemove
-    public void onPostRemove() {
-        PaymentCanceled paymentCanceled = new PaymentCanceled(this);
-        paymentCanceled.publishAfterCommit();
-    }
-
-    @PreUpdate
-    public void onPreUpdate() {}
 
     public static PaymentRepository repository() {
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(
@@ -79,42 +76,22 @@ public class Payment {
     }
 
     public static void cancelPayment(OrderCancled orderCancled) {
-        /** Example 1:  new item 
-        Payment payment = new Payment();
+        Payment payment = repository().findByOrderId(orderCancled.getId());
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();        
+		String dateToStr = dateFormat.format(date);
+
+        payment.setCancelDate(dateToStr);
         repository().save(payment);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCancled.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-
-         });
-        */
-
+        PaymentCanceled paymentCanceled = new PaymentCanceled(payment);
+        paymentCanceled.publishAfterCommit();
     }
     public static void requestPayment(Ordered ordered) {
-        /** Example 1:  new item */
-
         Payment payment = new Payment();
         payment.setOrderId(ordered.getId());
         payment.setPrice(ordered.getPrice());
         repository().save(payment);
-
-        /** Example 2:  finding and process
-        
-        repository().findById(ordered.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-
-         });
-        */
-
     }
 }

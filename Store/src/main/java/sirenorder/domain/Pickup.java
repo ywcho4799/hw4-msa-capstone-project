@@ -19,23 +19,14 @@ public class Pickup {
 
     private Long orderId;
 
-    private String customerAddr;
-
-    private String customerTel;
-
-    private String customerId;
-
-    private String pickupId;
-
     private String pickupStatus;
 
     @PostPersist
     public void onPostPersist() {
-        PickupStarted pickupStarted = new PickupStarted(this);
-        pickupStarted.publishAfterCommit();
-
-        PickupCanceled pickupCanceled = new PickupCanceled(this);
-        pickupCanceled.publishAfterCommit();
+        if(this.getPickupStatus() == "픽업 준비 완료"){
+            PickupStarted pickupStarted = new PickupStarted(this);
+            pickupStarted.publishAfterCommit();
+        }
     }
 
     public static PickupRepository repository() {
@@ -46,42 +37,16 @@ public class Pickup {
     }
 
     public static void requestOrder(PaymentApproved paymentApproved) {
-        /** Example 1:  new item 
         Pickup pickup = new Pickup();
+        pickup.setOrderId(paymentApproved.getOrderId());
         repository().save(pickup);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentApproved.get???()).ifPresent(pickup->{
-            
-            pickup // do something
-            repository().save(pickup);
-
-
-         });
-        */
-
     }
 
     public static void cancelPickup(PaymentCanceled paymentCanceled) {
-        /** Example 1:  new item 
-        Pickup pickup = new Pickup();
-        repository().save(pickup);
+        Pickup pickup = repository().findByOrderId(paymentCanceled.getOrderId());
+        pickup.setPickupStatus("픽업 취소");
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentCanceled.get???()).ifPresent(pickup->{
-            
-            pickup // do something
-            repository().save(pickup);
-
-
-         });
-        */
-
+        PickupCanceled pickupCanceled = new PickupCanceled(pickup);
+        pickupCanceled.publishAfterCommit();
     }
 }
