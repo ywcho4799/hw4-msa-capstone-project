@@ -10,8 +10,8 @@ const axios = require("axios").default;
 
 // backend host url
 axios.backend = null; //"http://localhost:8088";
-
-// axios.backendUrl = new URL(axios.backend);
+//axios.backend = "http://localhost:8088";
+//axios.backendUrl = new URL(axios.backend);
 axios.fixUrl = function(original){
 
   if(!axios.backend) return original;
@@ -41,8 +41,6 @@ templateFiles.keys().forEach(function(tempFiles) {
 });
 Vue.use(Managing);
 const pluralCaseList = []
-
-pluralCaseList.push( {plural: "deliveries", pascal: "Delivery"} )
 
 pluralCaseList.push( {plural: "orders", pascal: "Order"} )
 
