@@ -21,18 +21,19 @@
     },
     data: () => ({
         headers: [
-            { text: "id", value: "id" },
+           { text: "menu", value: "menu" },
             { text: "orderId", value: "orderId" },
+           
             { text: "orderStatus", value: "orderStatus" },
             { text: "payStatus", value: "payStatus" },
-            { text: "payAmount", value: "payAmount" },
-            { text: "productName", value: "productName" },
-            { text: "totalPrice", value: "totalPrice" },
+            { text: "paymentId", value: "paymentId" },
+            { text: "pickupStatus", value: "pickupStatus" },
+            
         ],
         orderDetails : [],
     }),
     async created() {
-      var temp = await axios.get(axios.backend + '/orderDetails')
+      var temp = await axios.get(axios.fixUrl('/orderDetails'))
 
       this.orderDetails = temp.data._embedded.orderDsetails;
 
