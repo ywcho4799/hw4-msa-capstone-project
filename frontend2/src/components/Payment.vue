@@ -23,73 +23,33 @@
 
     <v-card-text style = "margin-left:-15px; margin-top:10px;">
 
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field type="number" label="OrderId" v-model="value.orderId"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            OrderId :  {{value.orderId }}
-          </div>
+          
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="PayStatus" v-model="value.payStatus"/>
+            <v-text-field  label="orderId" v-model="value.orderId"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            PayStatus :  {{value.payStatus }}
-          </div>
-
-
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-menu
-                v-model="menu"
-                width="290px"
-            >
-                <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                    v-model="value.addDate"
-                    label="AddDate"
-                    prepend-icon="mdi-calendar"
-                    readonly
-                    v-bind="attrs"
-                    v-on="on"
-                ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="value.addDate"
-                :min="new Date().toISOString().substr(0, 10)"
-                @input="menu = false"
-                ></v-date-picker>
-            </v-menu>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            AddDate :  {{value.addDate }}
+            orderId :  {{value.orderId }}
           </div>
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-menu
-                v-model="menu"
-                width="290px"
-            >
-                <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                    v-model="value.changeDate"
-                    label="ChangeDate"
-                    prepend-icon="mdi-calendar"
-                    readonly
-                    v-bind="attrs"
-                    v-on="on"
-                ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="value.changeDate"
-                :min="new Date().toISOString().substr(0, 10)"
-                @input="menu = false"
-                ></v-date-picker>
-            </v-menu>
+            <v-text-field label="price" v-model="value.price"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            ChangeDate :  {{value.changeDate }}
+            price :  {{value.price }}
           </div>
+
+          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
+            <v-text-field label="payDate" v-model="value.payDate"/>
+          </div>
+          <div class="grey--text ml-4" v-else>
+            payDate :  {{value.payDate }}
+          </div>
+
+          
+         
+
+          
 
 
     </v-card-text>
@@ -97,22 +57,7 @@
     <v-divider class="mx-4"></v-divider>
 
     <v-card-actions style = "position:absolute; right:0; bottom:0;">
-      <v-btn
-        color="deep-purple lighten-2"
-        text
-        @click="edit"
-        v-if="!editMode"
-      >
-        Edit
-      </v-btn>
-      <v-btn
-        color="deep-purple lighten-2"
-        text
-        @click="save"
-        v-else
-      >
-        Save
-      </v-btn>
+      
       <v-btn
         color="deep-purple lighten-2"
         text
@@ -121,7 +66,23 @@
       >
         Delete
       </v-btn>
-      
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="send"
+        v-if="!payEnd"
+      >
+        결제
+      </v-btn>
+
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="send"
+        v-if="payEnd"
+      >
+        결제완료
+      </v-btn>
     </v-card-actions>
   </v-card>
 
@@ -143,7 +104,12 @@
     props: {
       value: Object,
       editMode: Boolean,
-      isNew: Boolean
+      isNew: Boolean,
+      payEnd: Boolean,
+      arr: {
+    type: Date,
+    default: function () { return new Date() }
+  }
     },
     data: () => ({
         date: new Date().toISOString().substr(0, 10),
@@ -188,6 +154,22 @@
           this.$emit('input', this.value);
           this.$emit('delete', this.value);
 
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      async send(){
+        try{
+          
+          this.payEnd = true;
+          await axios.patch(axios.fixUrl('/payments/'+this.value.orderId), 'payDate="2022/07/26 13:13:13"' )
+          await axios.patch(axios.fixUrl(this.value._links.self.href)   )
+          this.editMode = false;
+          this.isDeleted = true;
+
+          this.$emit('input', this.value);
+          this.$emit('delete', this.value);
+          
         }catch(e){
           alert(e.message)
         }
