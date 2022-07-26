@@ -12,7 +12,7 @@ import PaymentManager from "./components/PaymentManager"
 
 
 import OrderDetails from "./components/OrderDetails"
-
+import PickupManage from "./components/PickupManage"
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
@@ -35,6 +35,12 @@ export default new Router({
                 path: '/orderDetails',
                 name: 'OrderDetails',
                 component: OrderDetails
+            },
+
+            {
+                path: '/pickups',
+                name: 'PickupManage',
+                component: PickupManage
             },
 
 

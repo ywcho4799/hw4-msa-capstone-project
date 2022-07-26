@@ -32,9 +32,9 @@
         orderDetails : [],
     }),
     async created() {
-      var temp = await axios.get(axios.backend + '/orderdetails')
+      var temp = await axios.get(axios.backend + '/orderDetails')
 
-      this.orderDetails = temp.data._embedded.orderdetails;
+      this.orderDetails = temp.data._embedded.orderDsetails;
 
     },
     methods: {
