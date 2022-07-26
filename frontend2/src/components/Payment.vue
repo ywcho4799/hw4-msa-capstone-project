@@ -24,17 +24,24 @@
     <v-card-text style = "margin-left:-15px; margin-top:10px;">
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field type="number" label="OrderId" v-model="value.orderId"/>
+            <v-text-field  label="id" v-model="value.id"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            OrderId :  {{value.orderId }}
+            id :  {{value.id }}
           </div>
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="PayStatus" v-model="value.payStatus"/>
+            <v-text-field  label="orderId" v-model="value.orderId"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            PayStatus :  {{value.payStatus }}
+            orderId :  {{value.orderId }}
+          </div>
+
+          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
+            <v-text-field label="price" v-model="value.price"/>
+          </div>
+          <div class="grey--text ml-4" v-else>
+            price :  {{value.price }}
           </div>
 
 
@@ -61,35 +68,9 @@
                 ></v-date-picker>
             </v-menu>
           </div>
-          <div class="grey--text ml-4" v-else>
-            AddDate :  {{value.addDate }}
-          </div>
+         
 
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-menu
-                v-model="menu"
-                width="290px"
-            >
-                <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                    v-model="value.changeDate"
-                    label="ChangeDate"
-                    prepend-icon="mdi-calendar"
-                    readonly
-                    v-bind="attrs"
-                    v-on="on"
-                ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="value.changeDate"
-                :min="new Date().toISOString().substr(0, 10)"
-                @input="menu = false"
-                ></v-date-picker>
-            </v-menu>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            ChangeDate :  {{value.changeDate }}
-          </div>
+          
 
 
     </v-card-text>
