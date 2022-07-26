@@ -56,14 +56,20 @@ public class Payment {
         return cancelDate;
     }
 
-    @PostPersist
-    public void onPostPersist() {
+    @PostUpdate
+    public void onPostUpdate() {
         PaymentApproved paymentApproved = new PaymentApproved(this);
         paymentApproved.publishAfterCommit();
+    }
 
+    @PostRemove
+    public void onPostRemove() {
         PaymentCanceled paymentCanceled = new PaymentCanceled(this);
         paymentCanceled.publishAfterCommit();
     }
+
+    @PreUpdate
+    public void onPreUpdate() {}
 
     public static PaymentRepository repository() {
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(
@@ -91,7 +97,6 @@ public class Payment {
         */
 
     }
-
     public static void requestPayment(Ordered ordered) {
         /** Example 1:  new item */
 

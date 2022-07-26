@@ -31,11 +31,16 @@ public class Order {
     public void onPostPersist() {
         Ordered ordered = new Ordered(this);
         ordered.publishAfterCommit();
+    }
 
+    @PostRemove
+    public void onPostRemove() {
         OrderCancled orderCancled = new OrderCancled(this);
         orderCancled.publishAfterCommit();
     }
 
+    @PreRemove
+    public void onPreRemove() {}
 
     public static OrderRepository repository() {
         OrderRepository orderRepository = OrderApplication.applicationContext.getBean(
