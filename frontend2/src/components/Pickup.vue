@@ -103,19 +103,13 @@
         try{
           var temp = null;
           await axios.patch('/pickups/'+this.value.orderId,{
-            pickupStatus :'픽업 준비 완료' 
+            pickupStatus :'픽업 준비 완료'
           })
 
           this.value = temp.data;
 
           this.editMode = false;
-          this.$emit('input', this.value);
-
-          if(this.isNew){
-            this.$emit('add', this.value);
-          }else{
-            this.$emit('edit', this.value);
-          }
+          
 
         }catch(e){
           alert(e.message)
