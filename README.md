@@ -7,19 +7,20 @@
    ||  이예찬|대리|202201385|서비스혁신센터|SharedService3팀|
    ||  한정재|대리|201401249|서비스혁신센터|SharedService2팀|  
 
-- 분석설계 
-- SAGA Pattern - 
-- CQRS Pattern - 
-- Correlation / Compensation(Unique Key) - 
+분석설계
+
+- SAGA Pattern -
+- CQRS Pattern -
+- Correlation / Compensation(Unique Key) -
 - Request / Response (Feign Client / Sync.Async) -
-- Circuit Breaker - 
-- Gateway - 
-- Deploy / Pipeline - 
-- Autoscale(HPA) - 
-- Self-Healing(Liveness Probe) - 
-- Zero-Downtime Deploy(Readiness Probe) - 
-- Config Map / Persistence Volume -d 
-- Polyglot - 
+- Gateway -
+- Deploy / Pipeline -
+- Circuit Breaker -
+- Autoscale(HPA) -
+- Self-Healing(Liveness Probe) -
+- Zero-Downtime Deploy(Readiness Probe) -
+- Config Map / Persistence Volume -
+- Polyglot -
 
 
 # 분석설계
@@ -39,20 +40,23 @@
 
 
 기능 검증 - 주문 요청
-![image](https://user-images.githubusercontent.com/109929524/180700105-272e02ea-3079-44f7-af04-e6abec18388f.png)
+![image](https://user-images.githubusercontent.com/109929524/180945948-149faad7-c8b3-4969-8872-b9998c062359.png)
 
 - 고객이 주문한다.
 - 고객이 결제한다.
 - 결제가 승인되면 상점으로 주문 요청된다.
-- 배달 시작된다.
+- 음료준비가 완료되면 픽업 상태값이 변경된다.
 - 주문 상태가 변경된다.
 
 기능 검증 - 주문 취소
 
-![image](https://user-images.githubusercontent.com/109929524/180700149-e356f7d1-94c6-4216-b1c4-902572832880.png)
+![image](https://user-images.githubusercontent.com/109929524/180946179-d3f1716c-ef46-4ea2-a96d-8622bc72d890.png)
 
--고객이 주문 취소한다.
--
+- 고객이 주문 취소한다.
+- 주문 정보를 삭제한다.
+- Payment의 상태값이 변경된다.
+- Pickup 상태값이 변경된다.
+- 주문 상태가 변경된다.
 
 # 실행
 
@@ -72,6 +76,11 @@
 - cd Store
 - mvn spring-boot:run
 ```
+```
+- cd Orderdetail
+- mvn spring-boot:run
+```
+
 # CQRS
 
 - 주문 발생(취소), 결제(취소), 픽업(취소) 이벤트 발생 시 주문, 결제 상태값 주문금액(금액확인)을 고객이 조회할 수 있도록 CQRS로 구현하였습니다.
