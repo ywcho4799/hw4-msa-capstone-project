@@ -13,6 +13,10 @@ public class PaymentApproved extends AbstractEvent {
     private Double price;
     private String payDate;
 
+    public PaymentApproved(Payment aggregate) {
+        super(aggregate);
+    }
+
     public PaymentApproved() {
         super();
     }

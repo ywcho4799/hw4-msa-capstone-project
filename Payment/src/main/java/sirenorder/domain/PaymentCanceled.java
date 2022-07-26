@@ -14,6 +14,10 @@ public class PaymentCanceled extends AbstractEvent {
     private String payDate;
     private String cancelDate;
 
+    public PaymentCanceled(Payment aggregate) {
+        super(aggregate);
+    }
+    
     public PaymentCanceled() {
         super();
     }
