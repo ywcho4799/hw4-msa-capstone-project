@@ -10,10 +10,6 @@ public class PickupCanceled extends AbstractEvent {
 
     private Long id;
     private Long orderId;
-    private String customerAddr;
-    private String customerTel;
-    private String customerId;
-    private String pickupId;
     private String pickupStatus;
 
     public PickupCanceled(Pickup aggregate) {
