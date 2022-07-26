@@ -114,4 +114,68 @@ Modeling
 ![image](https://user-images.githubusercontent.com/109929524/180950184-f4148010-f74e-42e9-98cd-b12f198c1e28.png)
 
 #Correlation / Compensation(Unique Key)
+-  Order 서비스에서 주문취소 이벤트를 발행하였을때 Payment 서비스에서 주문취소 이벤트를 수신하여 작업 후 결제정보를 삭제하면서 결제 취소 이벤트 발행
+
+* 주문취소 구현 - OrderCanceled.java 
+![image](https://user-images.githubusercontent.com/109929524/180952696-16c5578e-790e-443c-866e-33bd2109e2ed.png)
+
+- 주문 취소 시 orderCanceled 이벤트 발생
+![image](https://user-images.githubusercontent.com/109929524/180953025-a81a3684-20c9-4d8d-a78d-1e420f0d992c.png)
+
+![image](https://user-images.githubusercontent.com/109929524/180953657-2f74ec4b-4f6e-45fa-b7d4-3f831ffcbf87.png)
+
+
+# CI/CD
+
+ - 도커 컨테이너 이미지 확인
+
+클러스터 이름 확인
+eksctl get clusters
+클러스터에 접속하기 위한 설정 다운로드
+aws eks --region ca-central-1 update-kubeconfig --name [Cluster Name]
+접속이 정상적으로 되었다면
+kubectl get nodes
+
+ECR docker 명령을 로그인 시키기 위한 설정
+password 확인
+aws --region ca-central-1 ecr get-login-password
+docker login --username AWS -p 위에서나온긴패스워드 [AWS유저아이디-숫자로만된].dkr.ecr.ca-central-1.amazonaws.com
+
+```
+
+- 도커 컨테이너, 이미지 확인
+```
+도커 컨테이너 확인
+docker container ls
+도커 이미지 확인
+docker image ls
+
+인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트를 인증합니다.
+AWS CLI 사용:
+
+1. 인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트 인증
+aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 610244661545.dkr.ecr.ap-southeast-2.amazonaws.com
+
+2. 도커 이미지 빌드
+docker build -t frontend .
+
+3.이미지에 태그를 지정
+docker tag frontend:latest 610244661545.dkr.ecr.ap-southeast-2.amazonaws.com/frontend:latest
+
+4. AWS 리포지토리로 푸시합니다.
+docker push 610244661545.dkr.ecr.ap-southeast-2.amazonaws.com/frontend:latest
+
+
+deployment.yml 파일에는 도커 이미지 부분이 변경되어 있어야 한다.
+kubectl apply -f kubernetes/deployment.yml
+kubectl apply -f kubernetes/service.yml
+
+* 클러스터 확인
+![image](https://user-images.githubusercontent.com/109929524/180955767-e684f756-6dcf-419c-b961-443daa524816.png)
+
+* 위 External IP 로 접근 
+![image](https://user-images.githubusercontent.com/109929524/180956183-612e0872-976c-4fbc-805d-c405543e115d.png)
+
+* 주문정보 확인
+![image](https://user-images.githubusercontent.com/109929524/180956469-0c69bd74-5764-402a-a0bb-7dfd21777a79.png)
 
