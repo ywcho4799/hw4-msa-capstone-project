@@ -12,6 +12,7 @@ import PaymentManager from "./components/PaymentManager"
 
 
 import OrderDetails from "./components/OrderDetails"
+
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
