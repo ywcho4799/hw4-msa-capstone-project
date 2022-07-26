@@ -162,13 +162,16 @@
         try{
           
           this.payEnd = true;
-          await axios.patch(axios.fixUrl('/payments/'+this.value.orderId), 'payDate="2022/07/26 13:13:13"' )
-          await axios.patch(axios.fixUrl(this.value._links.self.href)   )
+
+          //await axios.patch(axios.fixUrl('/payments/'+this.value.orderId), 'payDate="2022/07/26 13:13:13"' )
+          await axios.patch('/payments/'+this.value.orderId,{
+            payDate :'2022/07/26 13:13:13' 
+          })
           this.editMode = false;
           this.isDeleted = true;
 
-          this.$emit('input', this.value);
-          this.$emit('delete', this.value);
+          //this.$emit('input', this.value);
+          //this.$emit('delete', this.value);
           
         }catch(e){
           alert(e.message)
