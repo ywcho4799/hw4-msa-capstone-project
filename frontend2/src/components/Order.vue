@@ -23,70 +23,40 @@
 
     <v-card-text style = "margin-left:-15px; margin-top:10px;">
 
+         
+
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field type="number" label="OrderId" v-model="value.orderId"/>
+            <v-text-field  label="menu" v-model="value.menu"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            OrderId :  {{value.orderId }}
+            menu :  {{value.menu }}
           </div>
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field type="number" label="CustomerId" v-model="value.customerId"/>
+            <v-text-field label="price" v-model="value.price"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            CustomerId :  {{value.customerId }}
-          </div>
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="ProductName" v-model="value.productName"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            ProductName :  {{value.productName }}
+            price :  {{value.price }}
           </div>
 
 
 
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="OrderStatus" v-model="value.orderStatus"/>
+            <v-text-field label="customerId" v-model="value.customerId"/>
           </div>
           <div class="grey--text ml-4" v-else>
-            OrderStatus :  {{value.orderStatus }}
+            customerId :  {{value.customerId }}
+          </div>
+
+            <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
+            <v-text-field label="customerName" v-model="value.customerName"/>
+          </div>
+          <div class="grey--text ml-4" v-else>
+            customerName :  {{value.customerName }}
           </div>
 
 
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-menu
-                v-model="menu"
-                width="290px"
-            >
-                <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                    v-model="value.orderDate"
-                    label="OrderDate"
-                    prepend-icon="mdi-calendar"
-                    readonly
-                    v-bind="attrs"
-                    v-on="on"
-                ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="value.orderDate"
-                :min="new Date().toISOString().substr(0, 10)"
-                @input="menu = false"
-                ></v-date-picker>
-            </v-menu>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            OrderDate :  {{value.orderDate }}
-          </div>
-
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field label="CustomerAddr" v-model="value.customerAddr"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            CustomerAddr :  {{value.customerAddr }}
-          </div>
 
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
