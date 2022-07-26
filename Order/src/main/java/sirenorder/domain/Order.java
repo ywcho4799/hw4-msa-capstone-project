@@ -32,18 +32,10 @@ public class Order {
         Ordered ordered = new Ordered(this);
         ordered.publishAfterCommit();
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        sirenorder.external.Payment payment = new sirenorder.external.Payment();
-        // mappings goes here
-        OrderApplication.applicationContext
-            .getBean(sirenorder.external.PaymentService.class)
-            .requestPayment(payment);
-
         OrderCancled orderCancled = new OrderCancled(this);
         orderCancled.publishAfterCommit();
     }
+
 
     public static OrderRepository repository() {
         OrderRepository orderRepository = OrderApplication.applicationContext.getBean(

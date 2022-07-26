@@ -37,6 +37,18 @@ public class PolicyHandler {
         // Sample Logic //
         Payment.cancelPayment(event);
     }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverOrdered_RequestPayment(@Payload Ordered ordered) {
+        if (!ordered.validate()) return;
+        Ordered event = ordered;
+        System.out.println(
+            "\n\n##### listener RequestPayment : " + ordered.toJson() + "\n\n"
+        );
+
+        // Sample Logic //
+        Payment.requestPayment(event);
+    }
     // keep
 
 }

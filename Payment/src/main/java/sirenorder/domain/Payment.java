@@ -25,6 +25,37 @@ public class Payment {
 
     private String cancelDate;
 
+    public void setId(Long id){
+        this.id = id;
+    }
+    public Long getId(){
+        return id;
+    }
+    public void setOrderId(Long orderId){
+        this.orderId = orderId;
+    }
+    public Long getOrderId(){
+        return orderId;
+    }
+    public void setPrice(Double price){
+        this.price = price;
+    }
+    public Double getPrice(){
+        return price;
+    }
+    public void setPayDate(String payDate){
+        this.payDate = payDate;
+    }
+    public String getPayDate(){
+        return payDate;
+    }
+    public void setCancelDate(String cancelDate){
+        this.cancelDate = cancelDate;
+    }
+    public String getCancelDate(){
+        return cancelDate;
+    }
+
     @PostPersist
     public void onPostPersist() {
         PaymentApproved paymentApproved = new PaymentApproved(this);
@@ -51,6 +82,27 @@ public class Payment {
         /** Example 2:  finding and process
         
         repository().findById(orderCancled.get???()).ifPresent(payment->{
+            
+            payment // do something
+            repository().save(payment);
+
+
+         });
+        */
+
+    }
+
+    public static void requestPayment(Ordered ordered) {
+        /** Example 1:  new item */
+
+        Payment payment = new Payment();
+        payment.setOrderId(ordered.getId());
+        payment.setPrice(ordered.getPrice());
+        repository().save(payment);
+
+        /** Example 2:  finding and process
+        
+        repository().findById(ordered.get???()).ifPresent(payment->{
             
             payment // do something
             repository().save(payment);
