@@ -95,3 +95,23 @@ Modeling
 
 ![image](https://user-images.githubusercontent.com/17975717/180717689-7df38998-498a-4f49-84df-fe8a233073ee.png)
 
+- ordered 이벤트 발생 시
+![image](https://user-images.githubusercontent.com/109929524/180949505-544e037d-1edf-4fbb-829b-87eeba387a89.png)
+
+- PaymentApproved 이벤트 발생 시
+![image](https://user-images.githubusercontent.com/109929524/180949701-081eb097-9a8c-4149-a674-52c70fff6d74.png)
+
+- orderCanceld 이벤트 발생 시
+![image](https://user-images.githubusercontent.com/109929524/180949845-92617009-91f2-40fc-b8cf-257984bd9996.png)
+
+- paymentCanceld 이벤트 발생 시 
+![image](https://user-images.githubusercontent.com/109929524/180949967-6490c703-41d7-4254-a135-04df9c7c9c49.png)
+
+- pickupStarted 이벤트 발생 시 
+![image](https://user-images.githubusercontent.com/109929524/180950066-e3aebb9b-044f-4254-a0c2-14659776de56.png)
+
+- pickupCanceld 이벤트 발생 시
+![image](https://user-images.githubusercontent.com/109929524/180950184-f4148010-f74e-42e9-98cd-b12f198c1e28.png)
+
+#Correlation / Compensation(Unique Key)
+
