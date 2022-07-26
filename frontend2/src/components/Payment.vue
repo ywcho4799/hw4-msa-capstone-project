@@ -23,12 +23,7 @@
 
     <v-card-text style = "margin-left:-15px; margin-top:10px;">
 
-          <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
-            <v-text-field  label="id" v-model="value.id"/>
-          </div>
-          <div class="grey--text ml-4" v-else>
-            id :  {{value.id }}
-          </div>
+          
 
           <div class="grey--text ml-4" v-if="editMode" style = "margin-top:-20px;">
             <v-text-field  label="orderId" v-model="value.orderId"/>
