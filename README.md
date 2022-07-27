@@ -129,29 +129,29 @@ Modeling
 
  - 도커 컨테이너 이미지 확인
 
-클러스터 이름 확인
-eksctl get clusters
-클러스터에 접속하기 위한 설정 다운로드
-aws eks --region ca-central-1 update-kubeconfig --name [Cluster Name]
-접속이 정상적으로 되었다면
-kubectl get nodes
+- 클러스터 이름 확인
+ eksctl get clusters
+- 클러스터에 접속하기 위한 설정 다운로드
+ aws eks --region ca-central-1 update-kubeconfig --name [Cluster Name]
+- 접속이 정상적으로 되었다면
+ kubectl get nodes
 
-ECR docker 명령을 로그인 시키기 위한 설정
-password 확인
-aws --region ca-central-1 ecr get-login-password
-docker login --username AWS -p 위에서나온긴패스워드 [AWS유저아이디-숫자로만된].dkr.ecr.ca-central-1.amazonaws.com
+- ECR docker 명령을 로그인 시키기 위한 설정
+- password 확인
+  aws --region ca-central-1 ecr get-login-password
+  docker login --username AWS -p 위에서나온긴패스워드 [AWS유저아이디-숫자로만된].dkr.ecr.ca-central-1.amazonaws.com
 
 ```
 
 - 도커 컨테이너, 이미지 확인
 ```
-도커 컨테이너 확인
+- 도커 컨테이너 확인
 docker container ls
-도커 이미지 확인
+- 도커 이미지 확인
 docker image ls
 
-인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트를 인증합니다.
-AWS CLI 사용:
+- 인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트를 인증합니다.
+AWS CLI 사용
 
 1. 인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트 인증
 aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 610244661545.dkr.ecr.ap-southeast-2.amazonaws.com
@@ -178,4 +178,11 @@ kubectl apply -f kubernetes/service.yml
 
 * 주문정보 확인
 ![image](https://user-images.githubusercontent.com/109929524/180956469-0c69bd74-5764-402a-a0bb-7dfd21777a79.png)
+
+# Gateway
+
+게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화
+Gateway 설정 파일 수정
+
+![image](https://user-images.githubusercontent.com/109929524/181134934-e81159a1-bccc-49bb-a231-8e308de417f0.png)
 
