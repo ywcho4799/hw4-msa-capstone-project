@@ -24,6 +24,7 @@
 
 # 분석설계
 - 주문 상세보기를 통해 CQRS 구현
+- https://www.msaez.io/#/storming/anyone/2003fbbf3744529d407d58d1cc95b613
 
 - 고객이 주문한다
 - 고객이 결제한다 
