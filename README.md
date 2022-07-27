@@ -190,6 +190,13 @@ Gateway 설정 파일 수정
 ![image](https://user-images.githubusercontent.com/109929524/181134934-e81159a1-bccc-49bb-a231-8e308de417f0.png)
 
 단일진입점인 8088 포트로 주문 생성
+![image](https://user-images.githubusercontent.com/109929524/181164698-af106499-803d-4166-8181-b03a346f2b87.png)
+
+기존 8083 포트에서 결제 정보 확인
+![image](https://user-images.githubusercontent.com/109929524/181164845-cd94eb3a-57c2-48d2-88bf-88e551a9b4d4.png)
+
+단일 진입점인 8088포트에서 결제 정보 확인
+![image](https://user-images.githubusercontent.com/109929524/181164930-d45cd4da-2300-4179-888c-be60afe209b6.png)
 
 
 # AWS 
