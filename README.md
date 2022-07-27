@@ -204,7 +204,6 @@ Gateway 설정 파일 수정
 
 
 # 실습
-![image](https://user-images.githubusercontent.com/17975717/181136063-842e1b65-8633-4f6a-8baf-30e3f2da8e1a.png)
 
 - Order 주문 입력
 ![image](https://user-images.githubusercontent.com/17975717/181136611-24a1b024-8b32-4fad-a8e9-3a62f9b19515.png)
