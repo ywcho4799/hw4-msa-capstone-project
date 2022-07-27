@@ -202,3 +202,32 @@ Gateway 설정 파일 수정
 
 ![image](https://user-images.githubusercontent.com/109929524/181135359-f77e7639-630d-4ae0-847a-eb9771237591.png)
 
+
+# 실습
+![image](https://user-images.githubusercontent.com/17975717/181136063-842e1b65-8633-4f6a-8baf-30e3f2da8e1a.png)
+
+- Order 주문 입력
+![image](https://user-images.githubusercontent.com/17975717/181136611-24a1b024-8b32-4fad-a8e9-3a62f9b19515.png)
+
+- Order 생성 완료
+![image](https://user-images.githubusercontent.com/17975717/181136663-f3d54f53-8965-4ab4-94fb-a00f82d34390.png)
+
+- Order Detail 주문목록에 생성
+![image](https://user-images.githubusercontent.com/17975717/181137123-3994d1f2-2da1-40e4-9ee3-9f3127fc2a8b.png)
+
+- 결제화면에 주문 생성
+![image](https://user-images.githubusercontent.com/17975717/181137155-8a7e7042-742a-423a-bf77-12181d64db8c.png)
+
+- 결제 버튼 클릭시 결제완료 되며, 결제 시간 생성
+![image](https://user-images.githubusercontent.com/17975717/181137198-734a30e7-3094-4f2a-8706-a411b057bd42.png)
+
+-Order Detail 에 결제완료 상태 표시
+![image](https://user-images.githubusercontent.com/17975717/181137228-22e5be6e-24cc-426d-b212-b227ec4b2021.png)
+
+- Pick Up 목록에 생성 되며, Pickup시 픽업완료 버튼 클릭
+![image](https://user-images.githubusercontent.com/17975717/181137273-1006bd5f-0c7d-4e82-89b0-0022502f8517.png)
+
+- 픽업 준비완료로 변경
+![image](https://user-images.githubusercontent.com/17975717/181137336-9f77dca4-7b7a-4f28-a224-c2e69aed59de.png)
+
+
