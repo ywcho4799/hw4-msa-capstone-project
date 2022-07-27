@@ -186,3 +186,14 @@ Gateway 설정 파일 수정
 
 ![image](https://user-images.githubusercontent.com/109929524/181134934-e81159a1-bccc-49bb-a231-8e308de417f0.png)
 
+
+# AWS 
+
+- AWS EC2 Dashboard
+
+![image](https://user-images.githubusercontent.com/109929524/181135454-3d775d28-58e9-4983-b363-efc9a13d0f46.png)
+ 
+- AWS ECR
+
+![image](https://user-images.githubusercontent.com/109929524/181135359-f77e7639-630d-4ae0-847a-eb9771237591.png)
+
