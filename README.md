@@ -112,7 +112,7 @@ Modeling
 - pickupCanceld 이벤트 발생 시
 ![image](https://user-images.githubusercontent.com/109929524/180950184-f4148010-f74e-42e9-98cd-b12f198c1e28.png)
 
-#Correlation / Compensation(Unique Key)
+# Correlation / Compensation(Unique Key)
 -  Order 서비스에서 주문취소 이벤트를 발행하였을때 Payment 서비스에서 주문취소 이벤트를 수신하여 작업 후 결제정보를 삭제하면서 결제 취소 이벤트 발행
 
 * 주문취소 구현 - OrderCanceled.java 
