@@ -7,19 +7,19 @@
    ||  이예찬|대리|202201385|서비스혁신센터|SharedService3팀|
    ||  한정재|대리|201401249|서비스혁신센터|SharedService2팀|  
 
-- 분석설계 
-- SAGA Pattern 
-- CQRS Pattern 
-- Correlation / Compensation(Unique Key) 
-- Request / Response (Feign Client / Sync.Async)
-- Gateway
-- Deploy / Pipeline
-- Circuit Breaker 
-- Autoscale(HPA) 
-- Self-Healing(Liveness Probe) 
-- Zero-Downtime Deploy(Readiness Probe) 
-- Config Map / Persistence Volume 
-- Polyglot 
+- 분석설계 - 조영욱, 이예찬, 한정재
+- SAGA Pattern - 조영욱, 이예찬, 한정재
+- CQRS Pattern - 이예찬, 한정재
+- Correlation / Compensation(Unique Key) - 이예찬, 한정재
+- Request / Response (Feign Client / Sync.Async) - 이예찬, 한정재
+- Gateway - 한정재
+- Deploy / Pipeline - 조영욱
+- Circuit Breaker - 조영욱, 이예찬, 한정재
+- Autoscale(HPA) - 조영욱, 이예찬, 한정재
+- Self-Healing(Liveness Probe) - 미구현
+- Zero-Downtime Deploy(Readiness Probe) - 미구현 
+- Config Map / Persistence Volume - 미구현
+- Polyglot - 미구현
 
 
 # 분석설계
