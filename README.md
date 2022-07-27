@@ -206,7 +206,10 @@ Gateway 설정 파일 수정
 # 실습
 
 - Order 주문 입력
+
+'''
 ![image](https://user-images.githubusercontent.com/17975717/181136611-24a1b024-8b32-4fad-a8e9-3a62f9b19515.png)
+'''
 
 - Order 생성 완료
 ![image](https://user-images.githubusercontent.com/17975717/181136663-f3d54f53-8965-4ab4-94fb-a00f82d34390.png)
