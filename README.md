@@ -7,19 +7,19 @@
    ||  이예찬|대리|202201385|서비스혁신센터|SharedService3팀|
    ||  한정재|대리|201401249|서비스혁신센터|SharedService2팀|  
 
-- 분석설계 - 조영욱, 이예찬, 한정재
-- SAGA Pattern - 이예찬, 한정재
-- CQRS Pattern - 이예찬, 한정재
-- Correlation / Compensation(Unique Key) - 조영욱, 이예찬, 한정재
-- Request / Response (Feign Client / Sync.Async) - 이예찬, 한정재
-- Gateway - 한정재
-- Deploy / Pipeline - 조영욱
-- Circuit Breaker -
-- Autoscale(HPA) -
-- Self-Healing(Liveness Probe) -
-- Zero-Downtime Deploy(Readiness Probe) -
-- Config Map / Persistence Volume -
-- Polyglot -
+- 분석설계 
+- SAGA Pattern 
+- CQRS Pattern 
+- Correlation / Compensation(Unique Key) 
+- Request / Response (Feign Client / Sync.Async)
+- Gateway
+- Deploy / Pipeline
+- Circuit Breaker 
+- Autoscale(HPA) 
+- Self-Healing(Liveness Probe) 
+- Zero-Downtime Deploy(Readiness Probe) 
+- Config Map / Persistence Volume 
+- Polyglot 
 
 
 # 분석설계
@@ -81,6 +81,8 @@
 - mvn spring-boot:run
 ```
 
+- 6개의 도메인으로 구성했고 (Order, Payment, Store, Pickup, OrderDetail, Frontend) 각각의 도메인은 독립적으로 수행됩니다. 
+- 
 # CQRS
 
 - 주문 발생(취소), 결제(취소), 픽업(취소) 이벤트 발생 시 주문, 결제 상태값 주문금액(금액확인)을 고객이 조회할 수 있도록 CQRS로 구현하였습니다.
@@ -199,7 +201,29 @@ Gateway 설정 파일 수정
 - 단일 진입점인 8088포트에서 결제 정보 확인
 ![image](https://user-images.githubusercontent.com/109929524/181164930-d45cd4da-2300-4179-888c-be60afe209b6.png)
 
+# Circuit Breaker
+- 서킷 브레이커 설정 (application.yml)
+
+![image](https://user-images.githubusercontent.com/109929524/181178001-d0a7a00e-868e-45bf-b214-a8dda7a8b130.png)
+
+
+- Payment 서비스에서 요청 지연코드 작성
+
+![image](https://user-images.githubusercontent.com/109929524/181177824-d9526566-d27e-4d30-b643-fcd156e3b800.png)
+
+![image](https://user-images.githubusercontent.com/109929524/181179439-1415fa69-4631-49e7-a143-7192b97aba0b.png)
+
+- 장애차단 코드 작성 fall back 함수 설정
+- 
+@FeignClient(name="payment", url="http://localhost:8083", fallback = PaymentServiceImpl.class)
+public interface PaymentService {
+    @RequestMapping(method= RequestMethod.POST, path="/payments")
+    public void requestPayment(@RequestBody Payment payment);
+
+}
+
 # Autoscale(HPA)
+
 - kubectl get svc를 통하여 서비스 확인
 
 ![image](https://user-images.githubusercontent.com/109929524/181165173-9e48b5c9-b8a3-488b-8c6f-89a5eb4f2959.png)
@@ -211,7 +235,6 @@ Gateway 설정 파일 수정
 - 생성된 siege Pod 안쪽에서 정상 작동 확인
 
 ![image](https://user-images.githubusercontent.com/109929524/181165578-1c8edb35-ba72-414e-8957-c7f64b9871ab.png)
-
 - metric server 설치 확인(리소스 사용량 확인)
 
 ![image](https://user-images.githubusercontent.com/109929524/181166020-f141d0fc-bd8f-48e1-b6c4-e0c0b6a5faf7.png)
