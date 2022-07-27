@@ -39,7 +39,7 @@
 
 
 기능 검증 - 주문 요청
-![image](https://user-images.githubusercontent.com/109929524/180945948-149faad7-c8b3-4969-8872-b9998c062359.png)
+![image](https://user-images.githubusercontent.com/109929524/181168478-910d9382-45b5-4f2d-91e4-1a69685209b5.png)
 
 - 고객이 주문한다.
 - 고객이 결제한다.
@@ -49,7 +49,7 @@
 
 기능 검증 - 주문 취소
 
-![image](https://user-images.githubusercontent.com/109929524/180946179-d3f1716c-ef46-4ea2-a96d-8622bc72d890.png)
+![image](https://user-images.githubusercontent.com/109929524/181168600-8e922b6e-1443-4de4-bf85-2f12f4b150f1.png)
 
 - 고객이 주문 취소한다.
 - 주문 정보를 삭제한다.
