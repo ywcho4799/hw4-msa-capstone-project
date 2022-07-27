@@ -7,14 +7,13 @@
    ||  이예찬|대리|202201385|서비스혁신센터|SharedService3팀|
    ||  한정재|대리|201401249|서비스혁신센터|SharedService2팀|  
 
-분석설계
-
-- SAGA Pattern -
-- CQRS Pattern -
-- Correlation / Compensation(Unique Key) -
-- Request / Response (Feign Client / Sync.Async) -
-- Gateway -
-- Deploy / Pipeline -
+- 분석설계 - 조영욱, 이예찬, 한정재
+- SAGA Pattern - 이예찬, 한정재
+- CQRS Pattern - 이예찬, 한정재
+- Correlation / Compensation(Unique Key) - 조영욱, 이예찬, 한정재
+- Request / Response (Feign Client / Sync.Async) - 이예찬, 한정재
+- Gateway - 한정재
+- Deploy / Pipeline - 조영욱
 - Circuit Breaker -
 - Autoscale(HPA) -
 - Self-Healing(Liveness Probe) -
@@ -127,12 +126,14 @@ Modeling
 
 # CI/CD
 
- - 도커 컨테이너 이미지 확인
+- 도커 컨테이너 이미지 확인
 
 - 클러스터 이름 확인
  eksctl get clusters
+
 - 클러스터에 접속하기 위한 설정 다운로드
  aws eks --region ca-central-1 update-kubeconfig --name [Cluster Name]
+
 - 접속이 정상적으로 되었다면
  kubectl get nodes
 
@@ -150,7 +151,9 @@ docker container ls
 - 도커 이미지 확인
 docker image ls
 
-- 인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트를 인증합니다.
+- 도커 이미지를 빌드하고, Push 한다
+
+인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트를 인증합니다.
 AWS CLI 사용
 
 1. 인증 토큰을 검색하고 레지스트리에 대해 Docker 클라이언트 인증
@@ -185,6 +188,8 @@ kubectl apply -f kubernetes/service.yml
 Gateway 설정 파일 수정
 
 ![image](https://user-images.githubusercontent.com/109929524/181134934-e81159a1-bccc-49bb-a231-8e308de417f0.png)
+
+단일진입점인 8088 포트로 주문 생성
 
 
 # AWS 
