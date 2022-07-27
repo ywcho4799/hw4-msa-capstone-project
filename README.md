@@ -184,19 +184,41 @@ kubectl apply -f kubernetes/service.yml
 
 # Gateway
 
-게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화
+- 게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화
 Gateway 설정 파일 수정
 
 ![image](https://user-images.githubusercontent.com/109929524/181134934-e81159a1-bccc-49bb-a231-8e308de417f0.png)
 
-단일진입점인 8088 포트로 주문 생성
+- 단일진입점인 8088 포트로 주문 생성
 ![image](https://user-images.githubusercontent.com/109929524/181164698-af106499-803d-4166-8181-b03a346f2b87.png)
 
-기존 8083 포트에서 결제 정보 확인
+- 기존 8083 포트에서 결제 정보 확인
 ![image](https://user-images.githubusercontent.com/109929524/181164845-cd94eb3a-57c2-48d2-88bf-88e551a9b4d4.png)
 
-단일 진입점인 8088포트에서 결제 정보 확인
+- 단일 진입점인 8088포트에서 결제 정보 확인
 ![image](https://user-images.githubusercontent.com/109929524/181164930-d45cd4da-2300-4179-888c-be60afe209b6.png)
+
+# Autoscale(HPA)
+- kubectl get svc를 통하여 서비스 확인
+
+![image](https://user-images.githubusercontent.com/109929524/181165173-9e48b5c9-b8a3-488b-8c6f-89a5eb4f2959.png)
+
+- kubectl get pod 를 통해 Order 서비스 및 siege 상태 Running 확인
+
+![image](https://user-images.githubusercontent.com/109929524/181165267-e0688d29-db52-4c9d-a2ec-bd5f55bb040a.png)
+
+- 생성된 siege Pod 안쪽에서 정상 작동 확인
+
+![image](https://user-images.githubusercontent.com/109929524/181165578-1c8edb35-ba72-414e-8957-c7f64b9871ab.png)
+
+- metric server 설치 확인(리소스 사용량 확인)
+
+![image](https://user-images.githubusercontent.com/109929524/181166020-f141d0fc-bd8f-48e1-b6c4-e0c0b6a5faf7.png)
+
+- Auto Scaler 설정 
+ : CPU가 20% 넘으면 리플리카 최대 3개까지 확장
+ 
+ ![image](https://user-images.githubusercontent.com/109929524/181166199-4370d274-b2a6-4260-9e69-bb329b2ce8d2.png)
 
 
 # AWS 
