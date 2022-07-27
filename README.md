@@ -214,13 +214,14 @@ Gateway 설정 파일 수정
 ![image](https://user-images.githubusercontent.com/109929524/181179439-1415fa69-4631-49e7-a143-7192b97aba0b.png)
 
 - 장애차단 코드 작성 fall back 함수 설정
-- 
+
+```
 @FeignClient(name="payment", url="http://localhost:8083", fallback = PaymentServiceImpl.class)
 public interface PaymentService {
     @RequestMapping(method= RequestMethod.POST, path="/payments")
     public void requestPayment(@RequestBody Payment payment);
-
 }
+```
 
 # Autoscale(HPA)
 
